@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="HW3.Site1" %>
+
+<%@ Register Src="~/ucFooter.ascx" TagPrefix="uc1" TagName="ucFooter" %>
+<%@ Register Src="~/ucHeader.ascx" TagPrefix="uc1" TagName="ucHeader" %>
+<%@ Register Src="~/ucLeft.ascx" TagPrefix="uc1" TagName="ucLeft" %>
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+
+        html,body{
+            height:100%;
+            width:100%;
+        }
+        form {
+            margin:0;
+            padding:0;
+            display: flex;
+            flex-direction:column;
+            height:100%;
+            width:100%;
+            background-color:red;
+        }
+
+        .footer {
+            display:flex;
+            flex-direction: Row;
+            height: 229px;
+            width: 100%;
+            background-color: black;
+            align-items: flex-end;
+        }
+
+        .ucleft {
+            background-color: darkgrey;
+            width: 10%;
+            height:100%;
+            display: flex;
+            margin: 5px;
+            align-items: center;
+
+        }
+
+        .aside {
+            display: flex;
+            flex-direction: Row;
+            min-height:65%;
+        }
+        .section {
+            display: flex;
+            overflow:scroll;
+            width: 90%;
+            height:100%;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <uc1:ucHeader runat="server" ID="ucHeader" />
+        </header>
+        <div class="aside">
+            <div class="ucleft">
+                <uc1:ucLeft runat="server" ID="ucLeft" />
+            </div>
+            <div class="section">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <div class="footer">
+            <uc1:ucFooter runat="server" ID="ucFooter" />
+        </div>
+    </form>
+</body>
+</html>
